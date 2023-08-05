@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctrx77fgdke6g"]
+
+[ext_resource type="PackedScene" uid="uid://bu0lfh2stdtny" path="res://scenes/characters/gobot.tscn" id="1_huks4"]
+[ext_resource type="PackedScene" uid="uid://byqxmfhw4v4jj" path="res://scenes/characters/round_bat.tscn" id="2_ol02x"]
+[ext_resource type="Texture2D" uid="uid://bi42oc17mj0ni" path="res://assets/ui/soul points - under.png" id="3_138of"]
+[ext_resource type="Texture2D" uid="uid://4sl3xir65tb7" path="res://assets/ui/soul points - progress.png" id="4_wf45i"]
+[ext_resource type="PackedScene" uid="uid://bw1in8le0kcvo" path="res://scenes/soul_points_bar.tscn" id="5_vj7uj"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_nagnn"]
+albedo_color = Color(0.427451, 0.968627, 0.552941, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k5quv"]
+size = Vector2(30, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ol4v"]
+size = Vector3(30, 0.001, 30)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxs1c"]
+sky_top_color = Color(0.372549, 0.54902, 0.780392, 1)
+
+[sub_resource type="Sky" id="Sky_lwh1s"]
+sky_material = SubResource("ProceduralSkyMaterial_fxs1c")
+
+[sub_resource type="Environment" id="Environment_xugp3"]
+background_mode = 2
+sky = SubResource("Sky_lwh1s")
+
+[node name="Combat" type="Node"]
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="Gobot" parent="Visuals" instance=ExtResource("1_huks4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="Ground" type="StaticBody3D" parent="Visuals"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals/Ground"]
+material_override = SubResource("ORMMaterial3D_nagnn")
+mesh = SubResource("PlaneMesh_k5quv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/Ground"]
+shape = SubResource("BoxShape3D_8ol4v")
+
+[node name="RoundBat" parent="Visuals" instance=ExtResource("2_ol02x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, 0)
+
+[node name="RoundBat2" parent="Visuals" instance=ExtResource("2_ol02x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 0)
+
+[node name="RoundBat3" parent="Visuals" instance=ExtResource("2_ol02x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, 5)
+
+[node name="RoundBat4" parent="Visuals" instance=ExtResource("2_ol02x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, 5)
+
+[node name="Settings" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Settings"]
+transform = Transform3D(0.258819, 0.951251, -0.167731, 0, 0.173648, 0.984808, 0.965926, -0.254887, 0.0449435, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Settings"]
+environment = SubResource("Environment_xugp3")
+
+[node name="Camera3D" type="Camera3D" parent="Settings"]
+transform = Transform3D(-0.707107, 0.353553, -0.612373, 0, 0.866026, 0.5, 0.707107, 0.353553, -0.612373, -25, 21, -25)
+projection = 1
+current = true
+size = 10.0
+near = 0.001
+far = 75.0
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0333333
+anchor_top = 0.0592593
+anchor_right = 0.139583
+anchor_bottom = 0.0861111
+value = 75.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_138of")
+texture_progress = ExtResource("4_wf45i")
+tint_under = Color(0.839216, 0.839216, 0.839216, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SoulPointsBar" parent="." instance=ExtResource("5_vj7uj")]
+anchor_left = 0.0333333
+anchor_top = 0.0592593
+anchor_right = 0.139583
+anchor_bottom = 0.0861111
+offset_right = 0.0
