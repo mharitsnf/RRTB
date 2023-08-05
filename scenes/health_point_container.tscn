@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnsa370wjn5y8"]
+
+[ext_resource type="Texture2D" uid="uid://vqli85g0b6tk" path="res://assets/ui/health point.png" id="1_xiq60"]
+
+[node name="HealthPointContainer" type="GridContainer"]
+anchors_preset = -1
+anchor_right = 0.0208333
+anchor_bottom = 0.037037
+offset_left = -28.0
+offset_right = -28.0
+rotation = -0.785398
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("1_xiq60")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("1_xiq60")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("1_xiq60")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("1_xiq60")

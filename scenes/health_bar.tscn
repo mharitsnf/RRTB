@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw1dfk8d87kop"]
+
+[ext_resource type="PackedScene" uid="uid://bnsa370wjn5y8" path="res://scenes/health_point_container.tscn" id="1_73umq"]
+
+[node name="HealthBar" type="GridContainer"]
+anchors_preset = -1
+anchor_right = 0.265
+anchor_bottom = 0.085
+offset_right = -468.8
+offset_bottom = -51.8
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 10
+
+[node name="HealthPointContainer" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer2" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer3" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer4" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer5" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer6" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer7" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer8" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer9" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer10" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer11" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer12" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer13" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer14" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer15" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer16" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer17" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer18" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer19" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
+
+[node name="HealthPointContainer20" parent="." instance=ExtResource("1_73umq")]
+layout_mode = 2
